@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Jumper Dominus"
+run/main_scene="res://juego/Niveles/NivelTesting.tscn"
 config/icon="res://NewIcon.png"
 
 [display]
@@ -21,6 +22,12 @@ window/size/resizable=false
 window/size/always_on_top=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[layer_names]
+
+3d_physics/layer_1="Mundo"
+3d_physics/layer_2="Jugador"
+3d_physics/layer_3="Plataformas"
 
 [physics]
 
