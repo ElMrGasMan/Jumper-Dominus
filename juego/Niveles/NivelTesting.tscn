@@ -20,9 +20,6 @@ extents = Vector3( 50, 0.001, 50 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.921802, 0.38766, 0, -0.38766, 0.921802, 0, 2.97903, 3.58346 )
-
 [node name="Suelo" type="StaticBody" parent="."]
 collision_mask = 6
 
@@ -1271,3 +1268,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 50.5 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.4, 0, 0 )
+
+[editable path="Player"]

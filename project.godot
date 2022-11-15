@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "SpringArm",
+"class": "SostenedorCamara",
+"language": "GDScript",
+"path": "res://juego/player/SostenedorCamara.gd"
+} ]
+_global_script_class_icons={
+"SostenedorCamara": ""
+}
+
 [application]
 
 config/name="Jumper Dominus"
