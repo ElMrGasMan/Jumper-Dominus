@@ -1,10 +1,10 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://juego/player/SostenedorCamara.gd" type="Script" id=1]
+[ext_resource path="res://juego/player/Player.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape" id=1]
-radius = 0.4
-height = 1.31114
+[sub_resource type="CylinderShape" id=1]
+radius = 0.32
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.670157, 0.654471, 0.701569, 1 )
@@ -1649,18 +1649,19 @@ nodes/state/node = SubResource( 21 )
 nodes/state/position = Vector2( 440, 0 )
 nodes/walk/node = SubResource( 22 )
 nodes/walk/position = Vector2( -40, -240 )
-node_connections = [ "scale", 0, "walk", "state", 0, "scale", "state", 1, "air_dir", "output", 0, "gun", "air_dir", 0, "Animation 3", "air_dir", 1, "Animation 4", "gun", 0, "state", "gun", 1, "Animation 5", "walk", 0, "Animation", "walk", 1, "Animation 2" ]
+node_connections = [ "scale", 0, "walk", "state", 0, "scale", "state", 1, "air_dir", "output", 0, "gun", "gun", 0, "state", "gun", 1, "Animation 5", "walk", 0, "Animation", "walk", 1, "Animation 2", "air_dir", 0, "Animation 3", "air_dir", 1, "Animation 4" ]
 
-[node name="Player" type="KinematicBody"]
+[node name="MarkIV" type="KinematicBody"]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
 collision_layer = 2
 collision_mask = 4
+script = ExtResource( 2 )
 __meta__ = {
 "__editor_plugin_screen__": "3D"
 }
 
 [node name="CollisionCapsule" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.04824, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 1 )
 
 [node name="Armature" type="Spatial" parent="."]
@@ -1828,9 +1829,11 @@ parameters/state/current = 0
 parameters/walk/blend_amount = 0.0
 
 [node name="SostenedorCamara" type="SpringArm" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+collision_mask = 6
 spring_length = 4.0
 script = ExtResource( 1 )
+rango_rotacion_cam_x = Vector2( -55, -5 )
 
 [node name="CamaraPlayer" type="Camera" parent="SostenedorCamara"]
 transform = Transform( 1.66667, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, 0, 0.833333, 0 )
