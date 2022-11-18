@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://recursos/modelos/hud/Kenney Pixel Square.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://recursos/modelos/hud/coinBronze.png" type="Texture" id=2]
+[ext_resource path="res://recursos/modelos/hud/backgroundCastles.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Animacion_monedas"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/coinBronze:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.88, 0.88 ), Vector2( 0.6, 0.6 ) ]
+}
+
+[node name="ContenedorMonedas" type="NinePatchRect"]
+self_modulate = Color( 0.352941, 0.247059, 0, 0.658824 )
+margin_right = 162.0
+margin_bottom = 51.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Cant" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 27.5772
+margin_top = -19.8223
+margin_right = 81.5772
+margin_bottom = 55.1777
+custom_fonts/font = SubResource( 1 )
+text = "666
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coinBronze" type="Sprite" parent="MarginContainer"]
+position = Vector2( 0, 18.3848 )
+rotation = 6.28319
+scale = Vector2( 0.88, 0.88 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Animacion_monedas"
+anims/Animacion_monedas = SubResource( 2 )

@@ -113,3 +113,9 @@ func calc_direccion() -> Vector3:
 	arbol_animaciones.set_mezcla_idle_andar_valor(direccion.length())
 	
 	return direccion
+
+
+func respawn() -> void:
+	DataDelJugador.restar_vida()
+# warning-ignore:return_value_discarded
+	get_tree().reload_current_scene()

@@ -19,6 +19,26 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://juego/player/Player.gd"
 }, {
+"base": "Control",
+"class": "MenuIntermedio",
+"language": "GDScript",
+"path": "res://juego/HUD/MenuIntermedio.gd"
+}, {
+"base": "Area",
+"class": "Moneda",
+"language": "GDScript",
+"path": "res://juego/Items/MonedaBronce.gd"
+}, {
+"base": "Node",
+"class": "Nivel",
+"language": "GDScript",
+"path": "res://juego/Niveles/Nivel.gd"
+}, {
+"base": "Area",
+"class": "Sierra",
+"language": "GDScript",
+"path": "res://juego/ItemsDanio/Sierra.gd"
+}, {
 "base": "SpringArm",
 "class": "SostenedorCamara",
 "language": "GDScript",
@@ -27,6 +47,10 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "ArbolAnimacionesPlayer": "",
 "Jugador": "",
+"MenuIntermedio": "",
+"Moneda": "",
+"Nivel": "",
+"Sierra": "",
 "SostenedorCamara": ""
 }
 
@@ -35,6 +59,11 @@ _global_script_class_icons={
 config/name="Jumper Dominus"
 run/main_scene="res://juego/Niveles/NivelTesting.tscn"
 config/icon="res://NewIcon.png"
+
+[autoload]
+
+DataDelJugador="*res://juego/AutoLoads/DataDelJugador.gd"
+Eventos="*res://juego/AutoLoads/Eventos.gd"
 
 [display]
 
@@ -83,6 +112,9 @@ disparo={
 3d_physics/layer_1="Mundo"
 3d_physics/layer_2="Jugador"
 3d_physics/layer_3="Plataformas"
+3d_physics/layer_4="Monedas"
+3d_physics/layer_5="Danio"
+3d_physics/layer_6="Portal"
 
 [physics]
 

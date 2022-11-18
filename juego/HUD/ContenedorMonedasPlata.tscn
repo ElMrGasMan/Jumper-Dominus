@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://juego/HUD/ContenedorMonedas.tscn" type="PackedScene" id=1]
+[ext_resource path="res://recursos/modelos/hud/coinSilver.png" type="Texture" id=2]
+
+[node name="ContenedorMonedasPlata" instance=ExtResource( 1 )]
+self_modulate = Color( 0.584314, 0.682353, 0.678431, 0.658824 )
+
+[node name="coinBronze" parent="MarginContainer" index="0"]
+texture = ExtResource( 2 )
