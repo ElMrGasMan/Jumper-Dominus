@@ -1650,34 +1650,34 @@ nodes/state/node = SubResource( 21 )
 nodes/state/position = Vector2( 440, 0 )
 nodes/walk/node = SubResource( 22 )
 nodes/walk/position = Vector2( -40, -240 )
-node_connections = [ "scale", 0, "walk", "state", 0, "scale", "state", 1, "air_dir", "output", 0, "gun", "walk", 0, "Animation", "walk", 1, "Animation 2", "gun", 0, "state", "gun", 1, "Animation 5", "air_dir", 0, "Animation 3", "air_dir", 1, "Animation 4" ]
+node_connections = [ "scale", 0, "walk", "state", 0, "scale", "state", 1, "air_dir", "output", 0, "gun", "air_dir", 0, "Animation 3", "air_dir", 1, "Animation 4", "gun", 0, "state", "gun", 1, "Animation 5", "walk", 0, "Animation", "walk", 1, "Animation 2" ]
 
 [sub_resource type="AnimationNodeAnimation" id=24]
 animation = "run-cycle"
 
-[sub_resource type="AnimationNodeAnimation" id=29]
+[sub_resource type="AnimationNodeAnimation" id=25]
 animation = "jump-up-cycle"
 
-[sub_resource type="AnimationNodeAnimation" id=30]
+[sub_resource type="AnimationNodeAnimation" id=26]
 animation = "falling-cycle"
 
-[sub_resource type="AnimationNodeAnimation" id=33]
+[sub_resource type="AnimationNodeAnimation" id=27]
 animation = "shooting"
 
-[sub_resource type="AnimationNodeAnimation" id=25]
+[sub_resource type="AnimationNodeAnimation" id=28]
 animation = "idle"
 
-[sub_resource type="AnimationNodeTimeScale" id=26]
+[sub_resource type="AnimationNodeTimeScale" id=29]
 
-[sub_resource type="AnimationNodeBlend2" id=34]
+[sub_resource type="AnimationNodeBlend2" id=30]
 filter_enabled = true
 filters = [ "Armature/Skeleton:l-arm", "Armature/Skeleton:l-forearm", "Armature/Skeleton:r-arm", "Armature/Skeleton:r-forearm" ]
 
-[sub_resource type="AnimationNodeBlend2" id=27]
-
 [sub_resource type="AnimationNodeBlend2" id=31]
 
-[sub_resource type="AnimationNodeTransition" id=32]
+[sub_resource type="AnimationNodeBlend2" id=32]
+
+[sub_resource type="AnimationNodeTransition" id=33]
 input_count = 2
 xfade_time = 0.2
 input_0/name = "suelo"
@@ -1685,30 +1685,30 @@ input_0/auto_advance = false
 input_1/name = "aire"
 input_1/auto_advance = false
 
-[sub_resource type="AnimationNodeBlendTree" id=28]
+[sub_resource type="AnimationNodeBlendTree" id=34]
 graph_offset = Vector2( 288.96, 252.583 )
-nodes/Animation/node = SubResource( 25 )
+nodes/Animation/node = SubResource( 28 )
 nodes/Animation/position = Vector2( 266.667, 80 )
 "nodes/Animation 2/node" = SubResource( 24 )
 "nodes/Animation 2/position" = Vector2( 80, 266.667 )
-"nodes/Animation 3/node" = SubResource( 29 )
+"nodes/Animation 3/node" = SubResource( 25 )
 "nodes/Animation 3/position" = Vector2( 293.333, 400 )
-"nodes/Animation 4/node" = SubResource( 30 )
+"nodes/Animation 4/node" = SubResource( 26 )
 "nodes/Animation 4/position" = Vector2( 293.333, 533.333 )
-"nodes/Animation 5/node" = SubResource( 33 )
+"nodes/Animation 5/node" = SubResource( 27 )
 "nodes/Animation 5/position" = Vector2( 826.065, 437.25 )
-nodes/CorrerVelocidad/node = SubResource( 26 )
+nodes/CorrerVelocidad/node = SubResource( 29 )
 nodes/CorrerVelocidad/position = Vector2( 293.333, 240 )
-nodes/MezclaDisparo/node = SubResource( 34 )
+nodes/MezclaDisparo/node = SubResource( 30 )
 nodes/MezclaDisparo/position = Vector2( 1120, 266.667 )
-nodes/MezclaIdleRun/node = SubResource( 27 )
+nodes/MezclaIdleRun/node = SubResource( 31 )
 nodes/MezclaIdleRun/position = Vector2( 553.049, 163.371 )
-nodes/MezclaJumpFall/node = SubResource( 31 )
+nodes/MezclaJumpFall/node = SubResource( 32 )
 nodes/MezclaJumpFall/position = Vector2( 533.333, 426.667 )
-nodes/TransicionSueloAire/node = SubResource( 32 )
+nodes/TransicionSueloAire/node = SubResource( 33 )
 nodes/TransicionSueloAire/position = Vector2( 800, 213.333 )
 nodes/output/position = Vector2( 1493.33, 213.333 )
-node_connections = [ "output", 0, "MezclaDisparo", "CorrerVelocidad", 0, "Animation 2", "MezclaIdleRun", 0, "Animation", "MezclaIdleRun", 1, "CorrerVelocidad", "MezclaJumpFall", 0, "Animation 3", "MezclaJumpFall", 1, "Animation 4", "TransicionSueloAire", 0, "MezclaIdleRun", "TransicionSueloAire", 1, "MezclaJumpFall", "MezclaDisparo", 0, "TransicionSueloAire", "MezclaDisparo", 1, "Animation 5" ]
+node_connections = [ "output", 0, "MezclaDisparo", "MezclaDisparo", 0, "TransicionSueloAire", "MezclaDisparo", 1, "Animation 5", "MezclaJumpFall", 0, "Animation 3", "MezclaJumpFall", 1, "Animation 4", "MezclaIdleRun", 0, "Animation", "MezclaIdleRun", 1, "CorrerVelocidad", "CorrerVelocidad", 0, "Animation 2", "TransicionSueloAire", 0, "MezclaIdleRun", "TransicionSueloAire", 1, "MezclaJumpFall" ]
 
 [node name="MarkIV" type="KinematicBody"]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
@@ -1888,7 +1888,7 @@ parameters/state/current = 0
 parameters/walk/blend_amount = 0.0
 
 [node name="ArbolAnimaciones" type="AnimationTree" parent="."]
-tree_root = SubResource( 28 )
+tree_root = SubResource( 34 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/CorrerVelocidad/scale = 1.3

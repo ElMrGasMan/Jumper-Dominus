@@ -5,8 +5,8 @@ extends Control
 
 export(String, FILE, "*.tscn") var menu_inicio = ""
 
-onready var boton_pantalla_completa: CheckBox = $Panel/HBoxContainer2/ContenedorPantalla/PantallaCompleta
-onready var boton_resoluciones = $Panel/HBoxContainer2/ContenedorPantalla/Resolucion/OptionButton
+onready var boton_pantalla_completa: CheckBox = $ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorPantalla/PantallaCompleta
+onready var boton_resoluciones = $ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorPantalla/Resolucion/OptionButton
 onready var resoluciones:= {
 	"640 x 480": Vector2(640, 480),
 	"960 x 640": Vector2(960, 640),
@@ -20,15 +20,15 @@ onready var indices_bus_audio:= {
 	"Musica": AudioServer.get_bus_index("Musica")
 }
 onready var etiquetas_bus_audio:= {
-	"Master": $Panel/HBoxContainer2/ContenedorVolumen/VolumenGeneral/VolumenCant,
-	"Musica":$Panel/HBoxContainer2/ContenedorVolumen/VolumenMusica/VolumenCant,
-	"SFX": $Panel/HBoxContainer2/ContenedorVolumen/VolumenSFX/VolumenCant
+	"Master": $ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenGeneral/VolumenCant,
+	"Musica":$ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenMusica/VolumenCant,
+	"SFX": $ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenSFX/VolumenCant
 }
 
 
 func _ready() -> void:
 	boton_pantalla_completa.set_pressed(OS.window_fullscreen)
-	poner_resoluciones()
+	#poner_resoluciones()
 	poner_volumen_buses()
 	resolucion_actual()
 
@@ -36,7 +36,6 @@ func _ready() -> void:
 func _on_BotonRegresar_pressed() -> void:
 # warning-ignore:return_value_discarded
 	get_tree().change_scene(menu_inicio)
-	
 
 
 func _on_PantallaCompleta_toggled(button_pressed: bool) -> void:
@@ -73,9 +72,9 @@ func _on_BotonDisminuirSFX_pressed() -> void:
 	cambiar_volumen(indices_bus_audio.SFX, false)
 
 
-func poner_resoluciones() -> void:
-	for res in resoluciones.keys():
-		boton_resoluciones.add_item(res)
+#func poner_resoluciones() -> void:
+	#for res in resoluciones.keys():
+		#boton_resoluciones.add_item(res)
 
 
 func centralizar_pantalla(res: Vector2) -> void:

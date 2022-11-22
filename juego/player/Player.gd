@@ -50,12 +50,12 @@ func _physics_process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("disparo"):
+	if event.is_action_pressed("disparo") and accion_disparando == false:
 		accion_disparando = true
 		arbol_animaciones.set_mezcla_disparo_valor(1)
 		linterna.light_energy = 15
 	
-	if event.is_action_released("disparo"):
+	elif event.is_action_pressed("disparo") and accion_disparando == true:
 		accion_disparando = false
 		arbol_animaciones.set_mezcla_disparo_valor(0)
 		linterna.light_energy = 0
