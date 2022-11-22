@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://recursos/modelos/RecursosPresentacion/Revamped.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://juego/Menus/MenuPresentacionJuego.gd" type="Script" id=2]
+[ext_resource path="res://recursos/modelos/RecursosPresentacion/logo_3.png" type="Texture" id=3]
+[ext_resource path="res://recursos/modelos/RecursosPresentacion/SFXMenuPresent.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 65
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Presentacion"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("logo_3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 0.297302, 1 ),
+"update": 0,
+"values": [ Vector2( -151.289, 425 ), Vector2( 620, 425 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 0.297302, 1.03526 ),
+"update": 0,
+"values": [ Vector2( 1257.77, 160 ), Vector2( 219.5, 160 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 2 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("logo_3:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 360.0 ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "cargar_menu"
+} ]
+}
+
+[sub_resource type="Environment" id=3]
+glow_enabled = true
+glow_blend_mode = 0
+
+[node name="MenuPresentacionJuego" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -620.0
+margin_top = -360.0
+margin_right = 620.0
+margin_bottom = 360.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+menu_inicio = "res://juego/Menus/MenuPrincipal.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="logo_3" type="Sprite" parent="."]
+position = Vector2( -151.289, 425 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 5, 3, 4, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 637.774
+margin_top = -200.0
+margin_right = 1438.77
+margin_bottom = -68.0
+custom_fonts/font = SubResource( 1 )
+text = "GODOT GAME ENGINE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Presentacion"
+anims/Presentacion = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
