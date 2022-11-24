@@ -8,6 +8,7 @@ var nivel_actual = ""
 var nivel_siguiente = ""
 var num_nivel_actual: int = 0
 
+
 func resetear() -> void:
 	vidas = 3
 	monedas = 0

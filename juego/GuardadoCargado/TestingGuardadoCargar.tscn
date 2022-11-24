@@ -1,0 +1,135 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://juego/GuardadoCargado/TestingGuardadoCargar.gd" type="Script" id=1]
+
+[node name="TestingGuardadoCargar" type="Node"]
+script = ExtResource( 1 )
+
+[node name="BotonGuardado" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -61.5
+margin_top = 202.243
+margin_right = 61.5
+margin_bottom = 253.243
+text = "GUARDAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonCargado" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -61.3451
+margin_top = -102.441
+margin_right = 61.6549
+margin_bottom = -48.4409
+text = "CARGAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonGuardadoTRES" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 79.0886
+margin_top = -157.757
+margin_right = 237.089
+margin_bottom = -114.757
+text = "GUARDADO TRES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonCargadoTRES" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 79.0886
+margin_top = -102.441
+margin_right = 239.089
+margin_bottom = -58.4409
+text = "CARGADO TRES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextoBonito" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -159.827
+margin_right = 120.0
+margin_bottom = -145.827
+text = "Good Morning everyone, my name is:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextoResultadoJSON" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -252.778
+margin_top = -34.0022
+margin_right = -137.778
+margin_bottom = -20.0022
+text = "RESULTADO JSON:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextoResultadoTRES" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -252.778
+margin_top = 116.454
+margin_right = -139.778
+margin_bottom = 130.454
+text = "RESULTADO TRES:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NombreJSON" type="LineEdit" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -123.5
+margin_top = -61.546
+margin_right = 123.5
+margin_bottom = 6.45398
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NombreTRES" type="LineEdit" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -123.5
+margin_top = 90.5627
+margin_right = 122.5
+margin_bottom = 156.563
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="BotonGuardado" to="." method="_on_BotonGuardado_pressed"]
+[connection signal="pressed" from="BotonCargado" to="." method="_on_BotonCargado_pressed"]
+[connection signal="pressed" from="BotonGuardadoTRES" to="." method="_on_BotonGuardadoTRES_pressed"]
+[connection signal="pressed" from="BotonCargadoTRES" to="." method="_on_BotonCargadoTRES_pressed"]

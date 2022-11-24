@@ -8,9 +8,9 @@ export var numero_nivel: int = 0
 
 
 func _ready() -> void:
-	DataDelJugador.nivel_actual = get_tree().current_scene.filename
-	DataDelJugador.num_nivel_actual = numero_nivel
-	DataDelJugador.nivel_siguiente = siguiente_nivel
+	yield(get_tree().create_timer(4.0), "timeout")
+	datos_nivel()
+
 
 
 func _get_configuration_warning() -> String:
@@ -19,3 +19,9 @@ func _get_configuration_warning() -> String:
 	
 	else:
 		return ""
+
+
+func datos_nivel() -> void:
+	DataDelJugador.nivel_actual = get_tree().current_scene.filename
+	DataDelJugador.num_nivel_actual = numero_nivel
+	DataDelJugador.nivel_siguiente = siguiente_nivel

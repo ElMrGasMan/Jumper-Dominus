@@ -24,10 +24,35 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://juego/Menus/BotonAumentar.gd"
 }, {
+"base": "Control",
+"class": "CargaNivelSegundoPlano",
+"language": "GDScript",
+"path": "res://juego/AutoLoads/CargaNivelSegPlano.gd"
+}, {
+"base": "Node",
+"class": "DatosConfig",
+"language": "GDScript",
+"path": "res://juego/AutoLoads/DatosConfiguracion.gd"
+}, {
+"base": "Resource",
+"class": "DatosJuegoGuardado",
+"language": "GDScript",
+"path": "res://juego/Almacenamiento/DatosJuegoGuardados.gd"
+}, {
+"base": "Node",
+"class": "GuardarCargar",
+"language": "GDScript",
+"path": "res://juego/Almacenamiento/GuardadoYCargado.gd"
+}, {
 "base": "KinematicBody",
 "class": "Jugador",
 "language": "GDScript",
 "path": "res://juego/player/Player.gd"
+}, {
+"base": "KinematicBody",
+"class": "JugadorFalso",
+"language": "GDScript",
+"path": "res://juego/player/PlayerDummy.gd"
 }, {
 "base": "Control",
 "class": "MenuIntermedio",
@@ -54,6 +79,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://juego/Niveles/Nivel.gd"
 }, {
+"base": "Control",
+"class": "PantallaCarga",
+"language": "GDScript",
+"path": "res://juego/Menus/PantallaCarga.gd"
+}, {
 "base": "Area",
 "class": "Sierra",
 "language": "GDScript",
@@ -68,12 +98,18 @@ _global_script_class_icons={
 "ArbolAnimacionesPlayer": "",
 "BotonConfigTecla": "",
 "BotonSFX": "",
+"CargaNivelSegundoPlano": "",
+"DatosConfig": "",
+"DatosJuegoGuardado": "",
+"GuardarCargar": "",
 "Jugador": "",
+"JugadorFalso": "",
 "MenuIntermedio": "",
 "MenuOpciones": "",
 "MenuPresentacion": "",
 "Moneda": "",
 "Nivel": "",
+"PantallaCarga": "",
 "Sierra": "",
 "SostenedorCamara": ""
 }
@@ -81,13 +117,17 @@ _global_script_class_icons={
 [application]
 
 config/name="Jumper Dominus"
-run/main_scene="res://juego/Niveles/NivelTesting.tscn"
+run/main_scene="res://juego/Menus/MenuPrincipal.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="JumperDominus"
 config/icon="res://NewIcon.png"
 
 [autoload]
 
 DataDelJugador="*res://juego/AutoLoads/DataDelJugador.gd"
 Eventos="*res://juego/AutoLoads/Eventos.gd"
+DatosConfiguracion="*res://juego/AutoLoads/DatosConfiguracion.gd"
+CargaNivelSegPlano="*res://juego/AutoLoads/CargaNivelSegPlano.tscn"
 
 [display]
 
