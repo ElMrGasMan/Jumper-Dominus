@@ -8,6 +8,7 @@ var escena_precargada: Node = null
 
 onready var barra_carga: ProgressBar = $ProgresoDeCarga
 onready var alerta_carga_completa: Label = $OracionCarga
+onready var animaciones: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
@@ -26,6 +27,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		barra_carga.visible = false
 		alerta_carga_completa.visible = false
 		apretar_para_iniciar = false
+		animaciones.stop()
 
 
 func cargar_nivel_siguiente(nivel: String) -> void:
@@ -34,6 +36,7 @@ func cargar_nivel_siguiente(nivel: String) -> void:
 	hilo.start(self, "cargar_hilo", nivel, 2)
 	raise()
 	barra_carga.visible = true
+	DataDelJugador.cargando_partida = false
 
 
 func cargar_hilo(nivel: String) -> void:
@@ -59,11 +62,11 @@ func cargar_hilo(nivel: String) -> void:
 				print("Ocurrió un error en la carga del Nivel/Recurso")
 	
 	call_deferred("carga_completa_nivel", recurso_cargado)
-	
 
 
 func carga_completa_nivel(recurso: Resource) -> void:
 	alerta_carga_completa.visible = true
+	animaciones.play("Titilar")
 	hilo.wait_to_finish()
 	escena_precargada = recurso.instance()
 	apretar_para_iniciar = true

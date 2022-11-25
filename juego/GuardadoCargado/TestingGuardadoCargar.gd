@@ -25,15 +25,37 @@ func _on_BotonCargado_pressed() -> void:
 
 
 func _on_BotonGuardadoTRES_pressed() -> void:
-	if $NombreJSON.text != "":
+	if $NombreTRES.text != "":
 		var guardar: GuardarCargar = GuardarCargar.new()
-		var resultado_guardado: int = guardar.guardar_formato_tres({"nombre": $NombreJSON.text})
+		var resultado_guardado: int = guardar.guardar_formato_tres({"nombre": $NombreTRES.text})
 		
-		$TextoResultadoJSON.text = "%s" % resultado_guardado
+		$TextoResultadoTRES.text = "%s" % resultado_guardado
 	
 	else:
-		$TextoResultadoJSON.text = "El campo no puede estar vacío"
+		$TextoResultadoTRES.text = "El campo no puede estar vacío"
 
 
 func _on_BotonCargadoTRES_pressed() -> void:
-	pass # Replace with function body.
+	var cargar: GuardarCargar = GuardarCargar.new()
+	var datos_a_cargar: Dictionary = cargar.cargar_formato_tres()
+	
+	if not datos_a_cargar.empty():
+		$NombreTRES.text = datos_a_cargar.nombre
+		$TextoResultadoTRES.text = "Carga de datos exitosa"
+	
+	else:
+		$TextoResultadoTRES.text = "Carga de datos fallida"
+
+
+func _on_BotonBorradoJSON_pressed() -> void:
+	var borrar_datos: GuardarCargar = GuardarCargar.new()
+	var resultado: int = borrar_datos.borrar_datos_json()
+	
+	$TextoResultadoJSON.text = "%s" % resultado
+
+
+func _on_BotonBorradoTRES_pressed() -> void:
+	var borrar_datos: GuardarCargar = GuardarCargar.new()
+	var resultado: int = borrar_datos.borrar_datos_tres()
+	
+	$TextoResultadoTRES.text = "%s" % resultado

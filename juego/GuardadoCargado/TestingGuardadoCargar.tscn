@@ -61,6 +61,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BotonBorradoJSON" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -252.778
+margin_top = -102.441
+margin_right = -97.778
+margin_bottom = -61.4409
+text = "BORRAR JSON"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonBorradoTRES" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -252.778
+margin_top = -157.757
+margin_right = -115.778
+margin_bottom = -115.757
+text = "BORRAR TRES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextoBonito" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -133,3 +161,5 @@ __meta__ = {
 [connection signal="pressed" from="BotonCargado" to="." method="_on_BotonCargado_pressed"]
 [connection signal="pressed" from="BotonGuardadoTRES" to="." method="_on_BotonGuardadoTRES_pressed"]
 [connection signal="pressed" from="BotonCargadoTRES" to="." method="_on_BotonCargadoTRES_pressed"]
+[connection signal="pressed" from="BotonBorradoJSON" to="." method="_on_BotonBorradoJSON_pressed"]
+[connection signal="pressed" from="BotonBorradoTRES" to="." method="_on_BotonBorradoTRES_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://juego/Plataformas/Columnas/ColumnaBloquesTierra.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego/Niveles/Nivel.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://juego/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://juego/HUD/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://juego/Portal/PuertaNivelSiguiente.tscn" type="PackedScene" id=6]
+[ext_resource path="res://recursos/modelos/RecursosPresentacion/Revamped.otf" type="DynamicFontData" id=7]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.0941176, 0.266667, 0.121569, 1 )
@@ -17,9 +18,31 @@ size = Vector2( 100, 100 )
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 50, 0.001, 50 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 20
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "Titilar"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AdvertenciaGuardado:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Nivel2" type="Node"]
 script = ExtResource( 2 )
-siguiente_nivel = "res://juego/Niveles/NivelTesting.tscn"
+siguiente_nivel = "res://juego/Niveles/Nivel3.tscn"
 numero_nivel = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -1275,8 +1298,36 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 50.5 )
 
 [node name="ContenedorMonedas" type="Node" parent="."]
 
+[node name="CosasExtra" type="Node" parent="."]
+
+[node name="AdvertenciaGuardado" type="Label" parent="CosasExtra"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -278.128
+margin_top = -67.0
+margin_right = -17.1278
+margin_bottom = -20.0
+custom_fonts/font = SubResource( 7 )
+text = "GUARDANDO PARTIDA
+NO CIERRE EL JUEGO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CosasExtra"]
+autoplay = "Titilar"
+anims/Titilar = SubResource( 8 )
+
 [node name="MarkIV" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, -3.1 )
 
 [node name="PuertaNivelSiguiente" parent="." instance=ExtResource( 6 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 3.8 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

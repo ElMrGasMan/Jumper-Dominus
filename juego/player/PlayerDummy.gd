@@ -2,7 +2,7 @@ class_name JugadorFalso
 extends KinematicBody
 
 
-export var velocidad_rot: int = 10
+export var velocidad_rot: int = 15
 
 onready var animaciones: AnimationPlayer = $AnimationPlayer
 onready var armadura: Spatial = $Armature

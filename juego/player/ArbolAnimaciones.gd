@@ -2,10 +2,6 @@ class_name ArbolAnimacionesPlayer
 extends AnimationTree
 
 
-func _ready() -> void:
-	pass # Replace with function body.
-
-
 func get_mezcla_idle_andar_valor() -> float:
 	return get("parameters/MezclaIdleRun/blend_amount")
 

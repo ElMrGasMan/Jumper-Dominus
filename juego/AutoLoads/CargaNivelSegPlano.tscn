@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://juego/AutoLoads/CargaNivelSegPlano.gd" type="Script" id=1]
 [ext_resource path="res://recursos/modelos/hud/Kenney Pixel Square.ttf" type="DynamicFontData" id=2]
@@ -26,6 +26,23 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "Titilar"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("OracionCarga:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="CargaNivelSegPlano" type="Control"]
 anchor_right = 1.0
@@ -69,3 +86,6 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Titilar = SubResource( 5 )

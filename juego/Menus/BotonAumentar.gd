@@ -3,6 +3,7 @@ extends Button
 
 
 export(NodePath) var nodo_sfx
+
 var boton_sfx: AudioStreamPlayer
 
 

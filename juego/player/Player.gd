@@ -23,10 +23,7 @@ onready var sosten_camara: SpringArm = $SostenedorCamara
 onready var armadura: Spatial = $Armature
 onready var arbol_animaciones: AnimationTree = $ArbolAnimaciones
 onready var linterna: SpotLight = $LinternaModeloMKII
-
-
-func _ready() -> void:
-	pass
+onready var colisionador: CollisionShape = $CollisionCapsule
 
 
 # warning-ignore:unused_argument
@@ -44,9 +41,10 @@ func _physics_process(delta: float) -> void:
 	
 	if direccion_vista_pl.length() > 0:
 		armadura.rotation.y = direccion_vista_pl.angle()
+		colisionador.rotation.y = direccion_vista_pl.angle()
 	
 	if accion_disparando:
-		linterna.rotation.y = armadura.rotation.y - 3.14
+		linterna.rotation.y = armadura.rotation.y - 3.141592
 
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -34,6 +34,9 @@ func _ready() -> void:
 
 
 func _on_BotonRegresar_pressed() -> void:
+	var guardar_cambios: GuardarCargar = GuardarCargar.new()
+# warning-ignore:return_value_discarded
+	guardar_cambios.guardar_datos_config()
 # warning-ignore:return_value_discarded
 	get_tree().change_scene(menu_inicio)
 

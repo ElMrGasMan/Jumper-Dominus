@@ -4,4 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
-nombre = "Call of the Wild"
+vidas = 3
+monedas = 0
+nivel_actual = "res://juego/Niveles/Nivel2.tscn"
+num_nivel_actual = 2
+nivel_siguiente = "res://juego/Niveles/Nivel3.tscn"

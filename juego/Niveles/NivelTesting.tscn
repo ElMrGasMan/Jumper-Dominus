@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://juego/Plataformas/Columnas/ColumnaBloquesTierra.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego/Portal/PuertaNivelSiguiente.tscn" type="PackedScene" id=2]
@@ -6,17 +6,40 @@
 [ext_resource path="res://juego/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://juego/HUD/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://juego/Niveles/Nivel.gd" type="Script" id=6]
-[ext_resource path="res://juego/Items/MonedaBronce.tscn" type="PackedScene" id=7]
+[ext_resource path="res://juego/Plataformas/BloqueTierra.tscn" type="PackedScene" id=7]
+[ext_resource path="res://recursos/modelos/RecursosPresentacion/Revamped.otf" type="DynamicFontData" id=8]
 
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.0901961, 0.278431, 0.266667, 1 )
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.219608, 0.0117647, 0.341176, 1 )
 
-[sub_resource type="PlaneMesh" id=2]
-material = SubResource( 1 )
+[sub_resource type="PlaneMesh" id=5]
+material = SubResource( 6 )
 size = Vector2( 100, 100 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 50, 0.001, 50 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "Titilar"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AdvertenciaGuardado:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="NivelTesting" type="Node"]
 script = ExtResource( 6 )
@@ -32,7 +55,7 @@ environment = ExtResource( 3 )
 collision_mask = 6
 
 [node name="MeshInstance" type="MeshInstance" parent="Suelo"]
-mesh = SubResource( 2 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Suelo"]
@@ -1272,21 +1295,88 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 50.5 )
 
 [node name="Plataformas" type="Node" parent="."]
 
+[node name="BloqueTierra" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0 )
+
+[node name="BloqueTierra2" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1, 0 )
+
+[node name="BloqueTierra3" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 2, 0 )
+
+[node name="BloqueTierra4" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 2, -1 )
+
+[node name="BloqueTierra5" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 2, -2 )
+
+[node name="BloqueTierra6" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1, -2 )
+
+[node name="BloqueTierra7" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, -1.19209e-07, -2 )
+
+[node name="BloqueTierra8" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, -1.19209e-07, -2 )
+
+[node name="BloqueTierra9" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 1, -2 )
+
+[node name="BloqueTierra10" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 2, -2 )
+
+[node name="BloqueTierra11" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 2, -1 )
+
+[node name="BloqueTierra12" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 2, 0 )
+
+[node name="BloqueTierra13" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 1, 0 )
+
+[node name="BloqueTierra14" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, -1.19209e-07, 0 )
+
+[node name="BloqueTierra15" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -1.19209e-07, -1 )
+
+[node name="BloqueTierra16" parent="Plataformas" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1, -1 )
+
 [node name="ContenedorDanio" type="Node" parent="."]
 
 [node name="ContenedorMonedas" type="Node" parent="."]
 
-[node name="MonedaBronce" parent="ContenedorMonedas" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 0.6, 0 )
+[node name="CosasExtra" type="Node" parent="."]
 
-[node name="MonedaBronce2" parent="ContenedorMonedas" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0.6, 0 )
+[node name="AdvertenciaGuardado" type="Label" parent="CosasExtra"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -278.128
+margin_top = -67.0
+margin_right = -17.1278
+margin_bottom = -20.0
+custom_fonts/font = SubResource( 7 )
+text = "GUARDANDO PARTIDA
+NO CIERRE EL JUEGO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MonedaBronce3" parent="ContenedorMonedas" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.6, 0 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CosasExtra"]
+autoplay = "Titilar"
+anims/Titilar = SubResource( 8 )
 
 [node name="MarkIV" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, -3.1 )
 
 [node name="PuertaNivelSiguiente" parent="." instance=ExtResource( 2 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 2.6 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

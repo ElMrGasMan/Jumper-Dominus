@@ -6,11 +6,21 @@ extends Node
 export(String, FILE, "*.tscn") var siguiente_nivel = ""
 export var numero_nivel: int = 0
 
+onready var timer: Timer = $Timer
+onready var advertencia: Label = $CosasExtra/AdvertenciaGuardado
+
 
 func _ready() -> void:
-	yield(get_tree().create_timer(4.0), "timeout")
-	datos_nivel()
+	timer.start()
+	advertencia.visible = true
 
+
+func _on_Timer_timeout() -> void:
+	datos_nivel()
+	var guardar_partida: GuardarCargar = GuardarCargar.new()
+# warning-ignore:return_value_discarded
+	guardar_partida.guardar_datos_partida()
+	advertencia.visible = false
 
 
 func _get_configuration_warning() -> String:

@@ -7,6 +7,7 @@ var puntaje: int = 0
 var nivel_actual = ""
 var nivel_siguiente = ""
 var num_nivel_actual: int = 0
+var cargando_partida: bool
 
 
 func resetear() -> void:

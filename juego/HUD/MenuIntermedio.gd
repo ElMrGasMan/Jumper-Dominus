@@ -2,6 +2,8 @@ class_name MenuIntermedio
 extends Control
 
 
+export(String, FILE, "*.tscn") var pantalla_carga = ""
+
 onready var titulo_nivel: Label = $Label
 onready var titulo_puntaje: Label = $Label2
 
@@ -12,7 +14,6 @@ func _ready() -> void:
 	titulo_puntaje.text = "Puntaje Actual: \n {punt}".format({"punt": DataDelJugador.obtener_puntaje()})
 
 
-
 func _on_BotonNivelSiguiente_pressed() -> void:
 # warning-ignore:return_value_discarded
-	get_tree().change_scene(DataDelJugador.nivel_siguiente)
+	get_tree().change_scene(pantalla_carga)
