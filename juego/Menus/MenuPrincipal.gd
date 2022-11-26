@@ -7,10 +7,17 @@ export(String, FILE, "*.tscn") var nivel_inicial = ""
 export(String, FILE, "*.tscn") var pantalla_carga = ""
 
 onready var sfx_seleccion: AudioStreamPlayer = $AudioStreamPlayer
+onready var boton_cargar: Button = $VBoxContainer/ButtonCargar
 
 
 func _ready() -> void:
-	pass
+	var existencia_ruta: GuardarCargar = GuardarCargar.new()
+	
+	if existencia_ruta.chequear_existencia_datos_guardados() == false:
+		boton_cargar.disabled = true
+	
+	else:
+		boton_cargar.disabled = false
 
 
 func _on_ButtonSalir_pressed() -> void:

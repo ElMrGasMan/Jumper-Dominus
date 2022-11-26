@@ -75,6 +75,17 @@ func cargar_datos_partida() -> void:
 	DataDelJugador.nivel_siguiente = datos_cargar.nivel_siguiente
 
 
+func chequear_existencia_datos_guardados() -> bool:
+	var ruta_cargado: String = seleccionar_ruta(PARTIDA)
+	var directorio: Directory = Directory.new()
+	
+	if not directorio.file_exists(ruta_cargado):
+		return false
+	
+	else:
+		return true
+
+
 func seleccionar_ruta(archivo: int) -> String:
 	var ruta_guardado: String
 	

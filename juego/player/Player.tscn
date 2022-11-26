@@ -8,7 +8,7 @@
 radius = 0.32
 
 [sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.670157, 0.654471, 0.701569, 1 )
+albedo_color = Color( 0.321569, 0.345098, 0.521569, 1 )
 metallic = 0.62
 roughness = 0.0
 
@@ -1653,7 +1653,7 @@ nodes/MezclaJumpFall/position = Vector2( 533.333, 426.667 )
 nodes/TransicionSueloAire/node = SubResource( 22 )
 nodes/TransicionSueloAire/position = Vector2( 800, 213.333 )
 nodes/output/position = Vector2( 1493.33, 213.333 )
-node_connections = [ "MezclaIdleRun", 0, "Animation", "MezclaIdleRun", 1, "CorrerVelocidad", "CorrerVelocidad", 0, "Animation 2", "MezclaDisparo", 0, "TransicionSueloAire", "MezclaDisparo", 1, "Animation 5", "TransicionSueloAire", 0, "MezclaIdleRun", "TransicionSueloAire", 1, "MezclaJumpFall", "MezclaJumpFall", 0, "Animation 3", "MezclaJumpFall", 1, "Animation 4", "output", 0, "MezclaDisparo" ]
+node_connections = [ "output", 0, "MezclaDisparo", "MezclaJumpFall", 0, "Animation 3", "MezclaJumpFall", 1, "Animation 4", "MezclaIdleRun", 0, "Animation", "MezclaIdleRun", 1, "CorrerVelocidad", "TransicionSueloAire", 0, "MezclaIdleRun", "TransicionSueloAire", 1, "MezclaJumpFall", "CorrerVelocidad", 0, "Animation 2", "MezclaDisparo", 0, "TransicionSueloAire", "MezclaDisparo", 1, "Animation 5" ]
 
 [node name="MarkIV" type="KinematicBody"]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
@@ -1813,6 +1813,12 @@ mesh = SubResource( 4 )
 material/0 = null
 material/1 = null
 
+[node name="LinternaModeloMKII" type="SpotLight" parent="Armature/Skeleton"]
+transform = Transform( 5.55556, 0, 0, 0, 5.55556, 0, 0, 0, 5.55556, 0, 0, 0 )
+light_color = Color( 1, 0.992157, 0.615686, 1 )
+light_energy = 0.0
+spot_angle = 25.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/default = SubResource( 5 )
 anims/falling-cycle = SubResource( 6 )
@@ -1846,10 +1852,3 @@ camara_invertida_y = true
 transform = Transform( 1.66667, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, 0, 0.833333, 0 )
 current = true
 fov = 90.0
-
-[node name="LinternaModeloMKII" type="SpotLight" parent="."]
-transform = Transform( 1.66667, 0, 0, 0, 1.66667, 0, 0, 0, 1.66667, 0, 1.16633, 0.666667 )
-light_color = Color( 1, 0.992157, 0.615686, 1 )
-light_energy = 0.0
-spot_range = 6.0
-spot_angle = 20.0

@@ -22,8 +22,13 @@ var accion_disparando = false
 onready var sosten_camara: SpringArm = $SostenedorCamara
 onready var armadura: Spatial = $Armature
 onready var arbol_animaciones: AnimationTree = $ArbolAnimaciones
-onready var linterna: SpotLight = $LinternaModeloMKII
+onready var linterna: SpotLight = $Armature/Skeleton/LinternaModeloMKII
 onready var colisionador: CollisionShape = $CollisionCapsule
+onready var esqueleto: Skeleton = $Armature/Skeleton
+
+
+func _ready() -> void:
+	esqueleto.bind_child_node_to_bone(11, linterna)
 
 
 # warning-ignore:unused_argument
@@ -43,8 +48,8 @@ func _physics_process(delta: float) -> void:
 		armadura.rotation.y = direccion_vista_pl.angle()
 		colisionador.rotation.y = direccion_vista_pl.angle()
 	
-	if accion_disparando:
-		linterna.rotation.y = armadura.rotation.y - 3.141592
+#	if accion_disparando:
+#		linterna.rotation.y = linterna.rotation.y + 50.0
 
 
 func _unhandled_input(event: InputEvent) -> void:
