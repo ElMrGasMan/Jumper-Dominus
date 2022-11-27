@@ -11,8 +11,8 @@ dest_files=[ "res://.import/chest.glb-ebc698880fceca3e0f471a48c9f5500e.scn" ]
 
 [params]
 
-nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
+nodes/root_type="StaticBody"
+nodes/root_name="Cofre"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0

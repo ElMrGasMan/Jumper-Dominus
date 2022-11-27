@@ -11,8 +11,8 @@ dest_files=[ "res://.import/sign.glb-a616c8e37142f2241c4e2278d0b2b43b.scn" ]
 
 [params]
 
-nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
+nodes/root_type="StaticBody"
+nodes/root_name="Cartel"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0

@@ -10,6 +10,11 @@ var num_nivel_actual: int = 0
 var cargando_partida: bool
 
 
+func _ready() -> void:
+# warning-ignore:return_value_discarded
+	Eventos.connect("game_over", self, "_on_game_over")
+
+
 func resetear() -> void:
 	vidas = 3
 	monedas = 0
@@ -35,3 +40,8 @@ func restar_vida() -> void:
 func obtener_moneda() -> void:
 	monedas += 1
 	Eventos.emit_signal("actualizar_datos_hud")
+
+
+func _on_game_over() -> void:
+# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://juego/Menus/MenuGameOver.tscn")

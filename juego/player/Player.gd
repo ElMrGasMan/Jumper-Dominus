@@ -121,4 +121,5 @@ func calc_direccion() -> Vector3:
 func respawn() -> void:
 	DataDelJugador.restar_vida()
 # warning-ignore:return_value_discarded
-	get_tree().reload_current_scene()
+	if DataDelJugador.vidas > 0:
+		get_tree().reload_current_scene()
