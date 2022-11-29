@@ -5,6 +5,7 @@ export(String, FILE, "*.tscn") var pantalla_carga = ""
 
 
 func _ready():
+	MusicaStellarRaiders.ejecutar_musica(MusicaStellarRaiders.get_musica_menu())
 	DataDelJugador.resetear()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 

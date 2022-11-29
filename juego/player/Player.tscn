@@ -1653,7 +1653,7 @@ nodes/MezclaJumpFall/position = Vector2( 533.333, 426.667 )
 nodes/TransicionSueloAire/node = SubResource( 22 )
 nodes/TransicionSueloAire/position = Vector2( 800, 213.333 )
 nodes/output/position = Vector2( 1493.33, 213.333 )
-node_connections = [ "output", 0, "MezclaDisparo", "MezclaJumpFall", 0, "Animation 3", "MezclaJumpFall", 1, "Animation 4", "MezclaIdleRun", 0, "Animation", "MezclaIdleRun", 1, "CorrerVelocidad", "TransicionSueloAire", 0, "MezclaIdleRun", "TransicionSueloAire", 1, "MezclaJumpFall", "CorrerVelocidad", 0, "Animation 2", "MezclaDisparo", 0, "TransicionSueloAire", "MezclaDisparo", 1, "Animation 5" ]
+node_connections = [ "output", 0, "MezclaDisparo", "CorrerVelocidad", 0, "Animation 2", "TransicionSueloAire", 0, "MezclaIdleRun", "TransicionSueloAire", 1, "MezclaJumpFall", "MezclaDisparo", 0, "TransicionSueloAire", "MezclaDisparo", 1, "Animation 5", "MezclaIdleRun", 0, "Animation", "MezclaIdleRun", 1, "CorrerVelocidad", "MezclaJumpFall", 0, "Animation 3", "MezclaJumpFall", 1, "Animation 4" ]
 
 [node name="MarkIV" type="KinematicBody"]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
@@ -1663,6 +1663,9 @@ script = ExtResource( 2 )
 __meta__ = {
 "__editor_plugin_screen__": "3D"
 }
+impulso_externo = 14.0
+impulso_salto = 1.5
+velocidad_maxima = Vector2( 4, 10 )
 
 [node name="CollisionCapsule" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )

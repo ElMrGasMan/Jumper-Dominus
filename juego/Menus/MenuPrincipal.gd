@@ -11,6 +11,7 @@ onready var boton_cargar: Button = $VBoxContainer/ButtonCargar
 
 
 func _ready() -> void:
+	MusicaStellarRaiders.ejecutar_musica(MusicaStellarRaiders.get_musica_menu())
 	var existencia_ruta: GuardarCargar = GuardarCargar.new()
 	
 	if existencia_ruta.chequear_existencia_datos_guardados() == false:

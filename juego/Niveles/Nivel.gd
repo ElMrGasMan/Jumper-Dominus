@@ -11,6 +11,7 @@ onready var advertencia: Label = $CosasExtra/AdvertenciaGuardado
 
 
 func _ready() -> void:
+	MusicaStellarRaiders.ejecutar_musica(MusicaStellarRaiders.get_mus_amb())
 	timer.start()
 	advertencia.visible = true
 

@@ -85,6 +85,11 @@ _global_script_classes=[ {
 "path": "res://juego/Plataformas/BloqueMoviendose.gd"
 }, {
 "base": "Node",
+"class": "MusicaJuego",
+"language": "GDScript",
+"path": "res://juego/Musica/MusicaStellarRaiders.gd"
+}, {
+"base": "Node",
 "class": "Nivel",
 "language": "GDScript",
 "path": "res://juego/Niveles/Nivel.gd"
@@ -120,6 +125,7 @@ _global_script_class_icons={
 "MenuPresentacion": "",
 "Moneda": "",
 "MovimientoPlataforma": "",
+"MusicaJuego": "",
 "Nivel": "",
 "PantallaCarga": "",
 "Sierra": "",
@@ -140,6 +146,7 @@ DataDelJugador="*res://juego/AutoLoads/DataDelJugador.gd"
 Eventos="*res://juego/AutoLoads/Eventos.gd"
 DatosConfiguracion="*res://juego/AutoLoads/DatosConfiguracion.gd"
 CargaNivelSegPlano="*res://juego/AutoLoads/CargaNivelSegPlano.tscn"
+MusicaStellarRaiders="*res://juego/Musica/MusicaStellarRaiders.tscn"
 
 [display]
 
