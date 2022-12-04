@@ -24,11 +24,6 @@ func get_mus_amb() -> AudioStreamPlayer:
 	return musica_ambiental
 
 
-# warning-ignore:unused_argument
-func set_musica(stream_ambiental: AudioStream, stream_combate: AudioStream) -> void:
-	musica_ambiental.stream = stream_ambiental
-
-
 func detener_musica() -> void:
 	for node in get_children():
 		if node is AudioStreamPlayer:

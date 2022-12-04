@@ -79,7 +79,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://juego/Items/MonedaBronce.gd"
 }, {
-"base": "StaticBody",
+"base": "KinematicBody",
 "class": "MovimientoPlataforma",
 "language": "GDScript",
 "path": "res://juego/Plataformas/BloqueMoviendose.gd"

@@ -11,8 +11,8 @@ dest_files=[ "res://.import/blockSnowCliff.glb-4ce063ebbaf9ef185785d27d6c328e95.
 
 [params]
 
-nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
+nodes/root_type="StaticBody"
+nodes/root_name="BloqueNieve"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0

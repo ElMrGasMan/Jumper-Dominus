@@ -1,18 +1,19 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://juego/HUD/HUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://juego/Plataformas/Columnas/ColumnaBloquesTierra.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/Plataformas/BloqueMoviendose.tscn" type="PackedScene" id=3]
 [ext_resource path="res://juego/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://juego/Portal/PuertaNivelSiguiente.tscn" type="PackedScene" id=5]
 [ext_resource path="res://juego/Niveles/Nivel.gd" type="Script" id=6]
 [ext_resource path="res://recursos/modelos/RecursosPresentacion/Revamped.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://juego/Plataformas/PlataformasLarg/BloqueNieveGrande.tscn" type="PackedScene" id=8]
+[ext_resource path="res://juego/Plataformas/Columnas/ColumnaBloquesNieve.tscn" type="PackedScene" id=9]
 
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.0901961, 0.00392157, 0.219608, 1 )
+[sub_resource type="SpatialMaterial" id=6]
 
 [sub_resource type="PlaneMesh" id=2]
-material = SubResource( 1 )
+material = SubResource( 6 )
 size = Vector2( 100, 100 )
 
 [sub_resource type="BoxShape" id=3]
@@ -67,7 +68,40 @@ light_energy = 0.8
 light_specular = 0.4
 shadow_enabled = true
 
+[node name="Borde" type="Spatial" parent="."]
+
+[node name="BordeNorte" type="Spatial" parent="Borde"]
+
+[node name="ColumnaBloquesNieve" parent="Borde/BordeNorte" instance=ExtResource( 9 )]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50.5 )
+
+[node name="BordeOeste" type="Spatial" parent="Borde"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="ColumnaBloquesNieve" parent="Borde/BordeOeste" instance=ExtResource( 9 )]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50.5 )
+
+[node name="BordeEste" type="Spatial" parent="Borde"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="ColumnaBloquesNieve" parent="Borde/BordeEste" instance=ExtResource( 9 )]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50.5 )
+
+[node name="BordeSur" type="Spatial" parent="Borde"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -101 )
+
+[node name="ColumnaBloquesNieve" parent="Borde/BordeSur" instance=ExtResource( 9 )]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50.5 )
+
 [node name="Plataformas" type="Node" parent="."]
+
+[node name="BloqueNieveGrande" parent="Plataformas" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9, 0, -22.8 )
+
+[node name="BloqueMoviendose" parent="Plataformas" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 0.8, -19.7 )
+vector_movimiento = "Movimiento_XPositivo"
+tiempo_timer = 4.0
 
 [node name="ContenedorDanio" type="Node" parent="."]
 
@@ -96,38 +130,13 @@ autoplay = "Titilar"
 anims/Titilar = SubResource( 5 )
 
 [node name="MarkIV" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, -15.6 )
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -18.6, 0, -25.6 )
 
 [node name="PuertaNivelSiguiente" parent="." instance=ExtResource( 5 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 2.6 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 15.2, 0, 19.6 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 one_shot = true
-
-[node name="Borde" type="Spatial" parent="."]
-
-[node name="BordeNorte" type="Spatial" parent="Borde"]
-
-[node name="ColumnaBloquesTierra" type="Spatial" parent="Borde/BordeNorte" instance=ExtResource( 3 )]
-transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50.5 )
-
-[node name="BordeOeste" type="Spatial" parent="Borde"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
-
-[node name="ColumnaBloquesTierra" type="Spatial" parent="Borde/BordeOeste" instance=ExtResource( 3 )]
-transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50.5 )
-
-[node name="BordeEste" type="Spatial" parent="Borde"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
-
-[node name="ColumnaBloquesTierra" type="Spatial" parent="Borde/BordeEste" instance=ExtResource( 3 )]
-transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50.5 )
-
-[node name="BordeSur" type="Spatial" parent="Borde"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -101 )
-
-[node name="ColumnaBloquesTierra" type="Spatial" parent="Borde/BordeSur" instance=ExtResource( 3 )]
-transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50.5 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

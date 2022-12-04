@@ -1,7 +1,7 @@
 extends Node
 
 
-var vidas: int = 3
+var vidas: int = 5
 var monedas: int = 0
 var puntaje: int = 0
 var nivel_actual = ""
@@ -16,7 +16,7 @@ func _ready() -> void:
 
 
 func resetear() -> void:
-	vidas = 3
+	vidas = 5
 	monedas = 0
 	puntaje = 0
 
