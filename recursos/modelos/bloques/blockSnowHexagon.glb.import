@@ -11,8 +11,8 @@ dest_files=[ "res://.import/blockSnowHexagon.glb-199c52d8ed62e86d3f52a3e86e41ad7
 
 [params]
 
-nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
+nodes/root_type="StaticBody"
+nodes/root_name="BloqueNieveHexagono"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0

@@ -11,8 +11,8 @@ dest_files=[ "res://.import/blockSnowSlopeHalf.glb-97e335b3fec6e4559e5a6d444c419
 
 [params]
 
-nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
+nodes/root_type="StaticBody"
+nodes/root_name="BloqueNieveInclinadoMitad"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0

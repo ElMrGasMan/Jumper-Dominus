@@ -12,7 +12,7 @@ dest_files=[ "res://.import/coinBronze.glb-12922f84444c0ae4a488d64658901155.scn"
 [params]
 
 nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
+nodes/root_name="MonedaBronce"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0

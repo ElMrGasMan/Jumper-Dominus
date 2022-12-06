@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://juego/AutoLoads/CargaNivelSegPlano.gd" type="Script" id=1]
+[ext_resource path="res://recursos/modelos/hud/Kenney Pixel Square.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://recursos/modelos/RecursosPresentacion/Revamped.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0431373, 0.580392, 0, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color( 0.670588, 0.670588, 0.670588, 1 )
+border_blend = true
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.392157, 0, 0, 1 )
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.670588, 0.670588, 0.670588, 1 )
+border_blend = true
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "Titilar"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("OracionCarga:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="CargaNivelSegPlano" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgresoDeCarga" type="ProgressBar" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -239.786
+margin_top = -55.2544
+margin_right = -23.7864
+margin_bottom = -14.2544
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OracionCarga" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -249.767
+margin_top = -104.926
+margin_right = -15.7667
+margin_bottom = -65.9255
+custom_fonts/font = SubResource( 4 )
+text = "Presione Cualquier 
+Boton para continuar"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Titilar = SubResource( 5 )

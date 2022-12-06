@@ -1,0 +1,648 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://recursos/modelos/RecursosPresentacion/Revamped.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://recursos/modelos/hud/Kenney Pixel Square.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://juego/Menus/MenuOpciones.gd" type="Script" id=3]
+[ext_resource path="res://recursos/audio/sfx/select_1.wav" type="AudioStream" id=4]
+[ext_resource path="res://juego/Menus/BotonAumentar.gd" type="Script" id=5]
+[ext_resource path="res://juego/Menus/ContenedorTecla.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxLine" id=6]
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 5
+vertical = true
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0, 0.141176, 0.807843, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.286275, 0.286275, 0.286275, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0.698039, 0.74902, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 1, 1, 1 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 0.0745098, 0.423529, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
+
+[sub_resource type="DynamicFont" id=13]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxLine" id=15]
+color = Color( 0.137255, 0, 0.211765, 1 )
+grow_begin = -250.0
+grow_end = -250.0
+thickness = 10
+
+[node name="MenuOpciones" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+menu_inicio = "res://juego/Menus/MenuPrincipal.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.129412, 0, 0.180392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFXBotones" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+
+[node name="ContenedorTab" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio_Video" type="Tabs" parent="ContenedorTab"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 52.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Panel" type="Panel" parent="ContenedorTab/Audio_Video"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -513.0
+margin_top = -301.0
+margin_right = 513.0
+margin_bottom = 253.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ContenedorTab/Audio_Video/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContenedorPantalla" type="VBoxContainer" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2"]
+margin_right = 507.0
+margin_bottom = 554.0
+size_flags_horizontal = 3
+custom_constants/separation = 18
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pantalla" type="Label" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorPantalla"]
+margin_top = 176.0
+margin_right = 507.0
+margin_bottom = 229.0
+custom_fonts/font = SubResource( 2 )
+text = "Pantalla"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorPantalla"]
+margin_top = 247.0
+margin_right = 507.0
+margin_bottom = 251.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resolucion" type="HBoxContainer" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorPantalla"]
+margin_top = 269.0
+margin_right = 507.0
+margin_bottom = 315.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorPantalla/Resolucion"]
+margin_left = 34.0
+margin_right = 260.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 3 )
+text = "RESOLUCION:"
+align = 1
+
+[node name="OptionButton" type="OptionButton" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorPantalla/Resolucion"]
+margin_left = 280.0
+margin_right = 472.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 4 )
+text = "1240 x 720"
+items = [ "640 x 480", null, false, 0, null, "960 x 640", null, false, 1, null, "1240 x 720", null, false, 2, null, "1600 x 900", null, false, 3, null, "1920 x 1080", null, false, 4, null ]
+selected = 2
+
+[node name="PantallaCompleta" type="CheckBox" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorPantalla"]
+margin_top = 333.0
+margin_right = 507.0
+margin_bottom = 377.0
+custom_fonts/font = SubResource( 5 )
+text = "Pantalla Completa"
+align = 1
+
+[node name="VSeparator" type="VSeparator" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2"]
+margin_left = 511.0
+margin_right = 515.0
+margin_bottom = 554.0
+custom_styles/separator = SubResource( 6 )
+
+[node name="ContenedorVolumen" type="VBoxContainer" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2"]
+margin_left = 519.0
+margin_right = 1026.0
+margin_bottom = 554.0
+size_flags_horizontal = 3
+custom_constants/separation = 6
+alignment = 1
+
+[node name="Volumen" type="Label" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen"]
+margin_top = 188.0
+margin_right = 507.0
+margin_bottom = 241.0
+custom_fonts/font = SubResource( 2 )
+text = "Volumen"
+align = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen"]
+margin_top = 247.0
+margin_right = 507.0
+margin_bottom = 251.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumenGeneral" type="HBoxContainer" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen"]
+margin_top = 257.0
+margin_right = 507.0
+margin_bottom = 289.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="VolumenText" type="Label" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenGeneral"]
+margin_left = 161.0
+margin_top = 4.0
+margin_right = 237.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 7 )
+text = "Master"
+align = 1
+
+[node name="BotonAumentarGeneral" type="Button" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenGeneral"]
+margin_left = 252.0
+margin_right = 272.0
+margin_bottom = 32.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "+"
+script = ExtResource( 5 )
+nodo_sfx = NodePath("../../../../../../../SFXBotones")
+
+[node name="VolumenCant" type="Label" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenGeneral"]
+margin_left = 287.0
+margin_top = 4.0
+margin_right = 311.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 7 )
+text = "50"
+align = 1
+
+[node name="BotonDisminuirGeneral" type="Button" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenGeneral"]
+margin_left = 326.0
+margin_right = 346.0
+margin_bottom = 32.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "-"
+script = ExtResource( 5 )
+nodo_sfx = NodePath("../../../../../../../SFXBotones")
+
+[node name="VolumenMusica" type="HBoxContainer" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen"]
+margin_top = 295.0
+margin_right = 507.0
+margin_bottom = 327.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="VolumenText" type="Label" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenMusica"]
+margin_left = 163.0
+margin_top = 4.0
+margin_right = 235.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 7 )
+text = "Musica"
+align = 1
+
+[node name="BotonAumentarMusica" type="Button" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenMusica"]
+margin_left = 250.0
+margin_right = 270.0
+margin_bottom = 32.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "+"
+script = ExtResource( 5 )
+nodo_sfx = NodePath("../../../../../../../SFXBotones")
+
+[node name="VolumenCant" type="Label" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenMusica"]
+margin_left = 285.0
+margin_top = 4.0
+margin_right = 309.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 7 )
+text = "48"
+align = 1
+
+[node name="BotonDisminuirMusica" type="Button" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenMusica"]
+margin_left = 324.0
+margin_right = 344.0
+margin_bottom = 32.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "-"
+script = ExtResource( 5 )
+nodo_sfx = NodePath("../../../../../../../SFXBotones")
+
+[node name="VolumenSFX" type="HBoxContainer" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen"]
+margin_top = 333.0
+margin_right = 507.0
+margin_bottom = 365.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="VolumenText" type="Label" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenSFX"]
+margin_left = 181.0
+margin_top = 4.0
+margin_right = 217.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 7 )
+text = "SFX"
+align = 1
+
+[node name="BotonAumentarSFX" type="Button" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenSFX"]
+margin_left = 232.0
+margin_right = 252.0
+margin_bottom = 32.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "+"
+script = ExtResource( 5 )
+nodo_sfx = NodePath("../../../../../../../SFXBotones")
+
+[node name="VolumenCant" type="Label" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenSFX"]
+margin_left = 267.0
+margin_top = 4.0
+margin_right = 291.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 7 )
+text = "47"
+align = 1
+
+[node name="BotonDisminuirSFX" type="Button" parent="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenSFX"]
+margin_left = 306.0
+margin_right = 326.0
+margin_bottom = 32.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+text = "-"
+script = ExtResource( 5 )
+nodo_sfx = NodePath("../../../../../../../SFXBotones")
+
+[node name="BotonRegresar" type="Button" parent="ContenedorTab/Audio_Video"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -126.5
+margin_top = -67.0813
+margin_right = 126.5
+margin_bottom = -13.0813
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
+text = "Regresar"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+nodo_sfx = NodePath("../../../SFXBotones")
+
+[node name="Controles" type="Tabs" parent="ContenedorTab"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 52.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Instruccion" type="Label" parent="ContenedorTab/Controles"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -289.5
+margin_top = 55.6359
+margin_right = 289.5
+margin_bottom = 91.6359
+custom_fonts/font = SubResource( 14 )
+text = "Haz click en una tecla para cambiarla"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContenedorControles" type="VBoxContainer" parent="ContenedorTab/Controles"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -509.0
+margin_top = -278.0
+margin_right = 509.0
+margin_bottom = 278.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator6" type="HSeparator" parent="ContenedorTab/Controles/ContenedorControles"]
+margin_top = 96.0
+margin_right = 1018.0
+margin_bottom = 100.0
+custom_styles/separator = SubResource( 15 )
+
+[node name="ContenedorTecla" parent="ContenedorTab/Controles/ContenedorControles" instance=ExtResource( 6 )]
+margin_top = 120.0
+margin_bottom = 148.0
+
+[node name="DescripTecla" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla" index="0"]
+margin_left = 340.0
+margin_top = 0.0
+margin_right = 661.0
+margin_bottom = 28.0
+text = "Moverse Adelante"
+
+[node name="VSeparator" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla" index="1"]
+margin_left = 665.0
+margin_right = 669.0
+margin_bottom = 28.0
+
+[node name="BotonTecla" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla" index="2"]
+margin_left = 673.0
+margin_right = 677.0
+margin_bottom = 28.0
+text = ""
+accion = "moverse_adelante"
+
+[node name="HSeparator4" type="HSeparator" parent="ContenedorTab/Controles/ContenedorControles"]
+margin_top = 168.0
+margin_right = 1018.0
+margin_bottom = 172.0
+custom_styles/separator = SubResource( 15 )
+
+[node name="ContenedorTecla2" parent="ContenedorTab/Controles/ContenedorControles" instance=ExtResource( 6 )]
+margin_top = 192.0
+margin_bottom = 220.0
+
+[node name="DescripTecla" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla2" index="0"]
+margin_left = 370.0
+margin_top = 0.0
+margin_right = 631.0
+margin_bottom = 28.0
+text = "Moverse Atras"
+
+[node name="VSeparator" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla2" index="1"]
+margin_left = 635.0
+margin_right = 639.0
+margin_bottom = 28.0
+
+[node name="BotonTecla" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla2" index="2"]
+margin_left = 643.0
+margin_right = 647.0
+margin_bottom = 28.0
+text = ""
+accion = "moverse_atras"
+
+[node name="HSeparator3" type="HSeparator" parent="ContenedorTab/Controles/ContenedorControles"]
+margin_top = 240.0
+margin_right = 1018.0
+margin_bottom = 244.0
+custom_styles/separator = SubResource( 15 )
+
+[node name="ContenedorTecla3" parent="ContenedorTab/Controles/ContenedorControles" instance=ExtResource( 6 )]
+margin_bottom = 292.0
+
+[node name="DescripTecla" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla3" index="0"]
+margin_left = 348.0
+margin_top = 0.0
+margin_right = 653.0
+margin_bottom = 28.0
+text = "Moverse Derecha"
+
+[node name="VSeparator" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla3" index="1"]
+margin_left = 657.0
+margin_right = 661.0
+margin_bottom = 28.0
+
+[node name="BotonTecla" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla3" index="2"]
+margin_left = 665.0
+margin_right = 669.0
+margin_bottom = 28.0
+text = ""
+accion = "moverse_derecha"
+
+[node name="HSeparator2" type="HSeparator" parent="ContenedorTab/Controles/ContenedorControles"]
+margin_top = 312.0
+margin_right = 1018.0
+margin_bottom = 316.0
+custom_styles/separator = SubResource( 15 )
+
+[node name="ContenedorTecla4" parent="ContenedorTab/Controles/ContenedorControles" instance=ExtResource( 6 )]
+margin_top = 336.0
+margin_bottom = 364.0
+
+[node name="DescripTecla" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla4" index="0"]
+margin_left = 339.0
+margin_top = 0.0
+margin_right = 662.0
+margin_bottom = 28.0
+text = "Moverse Izquierda"
+
+[node name="VSeparator" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla4" index="1"]
+margin_left = 666.0
+margin_right = 670.0
+margin_bottom = 28.0
+
+[node name="BotonTecla" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla4" index="2"]
+margin_left = 674.0
+margin_right = 678.0
+margin_bottom = 28.0
+text = ""
+accion = "moverse_izquierda"
+
+[node name="HSeparator" type="HSeparator" parent="ContenedorTab/Controles/ContenedorControles"]
+margin_top = 384.0
+margin_right = 1018.0
+margin_bottom = 388.0
+custom_styles/separator = SubResource( 15 )
+
+[node name="ContenedorTecla5" parent="ContenedorTab/Controles/ContenedorControles" instance=ExtResource( 6 )]
+margin_top = 408.0
+margin_bottom = 436.0
+
+[node name="DescripTecla" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla5" index="0"]
+margin_left = 298.0
+margin_top = 0.0
+margin_right = 703.0
+margin_bottom = 28.0
+text = "Alumbrar con linterna"
+
+[node name="VSeparator" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla5" index="1"]
+margin_left = 707.0
+margin_right = 711.0
+margin_bottom = 28.0
+
+[node name="BotonTecla" parent="ContenedorTab/Controles/ContenedorControles/ContenedorTecla5" index="2"]
+margin_left = 715.0
+margin_right = 719.0
+margin_bottom = 28.0
+text = ""
+accion = "disparo"
+
+[node name="HSeparator5" type="HSeparator" parent="ContenedorTab/Controles/ContenedorControles"]
+margin_top = 456.0
+margin_right = 1018.0
+margin_bottom = 460.0
+custom_styles/separator = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonRegresar2" type="Button" parent="ContenedorTab/Controles"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -126.5
+margin_top = -67.0813
+margin_right = 126.5
+margin_bottom = -13.0813
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
+text = "Regresar"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+nodo_sfx = NodePath("../../../SFXBotones")
+
+[connection signal="item_selected" from="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorPantalla/Resolucion/OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="toggled" from="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorPantalla/PantallaCompleta" to="." method="_on_PantallaCompleta_toggled"]
+[connection signal="pressed" from="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenGeneral/BotonAumentarGeneral" to="." method="_on_BotonAumentarGeneral_pressed"]
+[connection signal="pressed" from="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenGeneral/BotonDisminuirGeneral" to="." method="_on_BotonDisminuirGeneral_pressed"]
+[connection signal="pressed" from="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenMusica/BotonAumentarMusica" to="." method="_on_BotonAumentarMusica_pressed"]
+[connection signal="pressed" from="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenMusica/BotonDisminuirMusica" to="." method="_on_BotonDisminuirMusica_pressed"]
+[connection signal="pressed" from="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenSFX/BotonAumentarSFX" to="." method="_on_BotonAumentarSFX_pressed"]
+[connection signal="pressed" from="ContenedorTab/Audio_Video/Panel/HBoxContainer2/ContenedorVolumen/VolumenSFX/BotonDisminuirSFX" to="." method="_on_BotonDisminuirSFX_pressed"]
+[connection signal="pressed" from="ContenedorTab/Audio_Video/BotonRegresar" to="." method="_on_BotonRegresar_pressed"]
+[connection signal="pressed" from="ContenedorTab/Controles/BotonRegresar2" to="." method="_on_BotonRegresar_pressed"]
+
+[editable path="ContenedorTab/Controles/ContenedorControles/ContenedorTecla"]
+[editable path="ContenedorTab/Controles/ContenedorControles/ContenedorTecla2"]
+[editable path="ContenedorTab/Controles/ContenedorControles/ContenedorTecla3"]
+[editable path="ContenedorTab/Controles/ContenedorControles/ContenedorTecla4"]
+[editable path="ContenedorTab/Controles/ContenedorControles/ContenedorTecla5"]
