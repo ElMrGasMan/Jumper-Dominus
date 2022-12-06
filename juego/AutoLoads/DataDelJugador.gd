@@ -3,7 +3,9 @@ extends Node
 
 var vidas: int = 5
 var monedas: int = 0
+var monedas_agarradas: int = 0
 var puntaje: int = 0
+var puntaje_total: int = 0
 var nivel_actual = ""
 var nivel_siguiente = ""
 var num_nivel_actual: int = 0
@@ -17,19 +19,26 @@ func _ready() -> void:
 
 func resetear() -> void:
 	vidas = 5
-	monedas = 0
 	puntaje = 0
+	restar_monedas_agarradas()
+
+
+func reseteo_completo() -> void:
+	resetear()
+	puntaje_total = 0
 
 
 func obtener_puntaje() -> int:
 	var valor_moneda = monedas * 5
 	puntaje = valor_moneda
+	puntaje_total += puntaje
 	
 	return puntaje
 
 
 func restar_vida() -> void:
 	vidas -= 1
+	restar_monedas_agarradas()
 	
 	if vidas == 0:
 		Eventos.emit_signal("game_over")
@@ -39,7 +48,17 @@ func restar_vida() -> void:
 
 func obtener_moneda() -> void:
 	monedas += 1
+	monedas_agarradas += 1
 	Eventos.emit_signal("actualizar_datos_hud")
+
+
+func restar_monedas_agarradas() -> void:
+	monedas -= monedas_agarradas
+	resetear_monedas_agarradas()
+
+
+func resetear_monedas_agarradas() -> void:
+	monedas_agarradas = 0
 
 
 func _on_game_over() -> void:

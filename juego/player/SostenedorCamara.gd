@@ -24,10 +24,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		rotation_degrees.x = clamp(rotation_degrees.x, rango_rotacion_cam_x.x, rango_rotacion_cam_x.y)
 		
 		rotation_degrees.y += event.relative.x * velocidad_mov_cam.x
-	
-	#TODO: DEBUG ONLY
-	if Input.is_action_pressed("ui_cancel"):
-		get_tree().quit()
 
 
 func camara_esta_invertida() -> Vector2:

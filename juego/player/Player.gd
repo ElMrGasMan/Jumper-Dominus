@@ -90,7 +90,7 @@ func movimiento_vert() -> void:
 		arbol_animaciones.set_transicion_suelo_aire_valor(SUELO)
 		vector_snap = Vector3.DOWN
 	
-	if movimiento.y >= velocidad_maxima.y:
+	if movimiento.y >= velocidad_maxima.y or is_on_ceiling():
 		salto_interrumpido = true
 	
 	if Input.is_action_pressed("saltar") and accion_saltando and not salto_interrumpido:

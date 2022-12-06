@@ -5,3 +5,5 @@ extends Node
 signal game_over()
 # warning-ignore:unused_signal
 signal actualizar_datos_hud()
+# warning-ignore:unused_signal
+signal despausar()

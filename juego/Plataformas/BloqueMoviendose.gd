@@ -2,7 +2,7 @@ class_name MovimientoPlataforma
 extends KinematicBody
 
 
-export(String, "Movimiento_ZPositivo", "Movimiento_XPositivo") var vector_movimiento
+export(String, "Movimiento_ZPositivo", "Movimiento_XPositivo", "Movimiento_ZNeg", "Movimiento_XNeg") var vector_movimiento
 export var tiempo_timer: float = 2.0
 
 var movimiento: Vector3 = Vector3.ZERO
@@ -13,10 +13,16 @@ func _ready() -> void:
 	match vector_movimiento:
 		
 		"Movimiento_ZPositivo":
-			movimiento = Vector3(0.0, 0.0, 1.0)
+			movimiento = Vector3(0.0, 0.0, 2.0)
 		
 		"Movimiento_XPositivo":
-			movimiento = Vector3(1.0, 0.0, 0.0)
+			movimiento = Vector3(2.0, 0.0, 0.0)
+		
+		"Movimiento_ZNeg":
+			movimiento = Vector3(0.0, 0.0, -2.0)
+		
+		"Movimiento_XNeg":
+			movimiento = Vector3(-2.0, 0.0, 0.0)
 
 # warning-ignore:unused_argument
 func _physics_process(delta: float) -> void:

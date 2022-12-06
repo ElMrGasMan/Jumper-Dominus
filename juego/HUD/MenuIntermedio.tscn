@@ -4,7 +4,7 @@
 [ext_resource path="res://juego/HUD/MenuIntermedio.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 60
+size = 54
 outline_size = 8
 outline_color = Color( 0, 0.278431, 0.121569, 1 )
 font_data = ExtResource( 1 )
@@ -52,11 +52,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -500.0
-margin_top = -284.104
+margin_top = -334.958
 margin_right = 500.0
-margin_bottom = -161.104
+margin_bottom = -151.958
 custom_fonts/font = SubResource( 1 )
-text = "¡Nivel Completado!
+text = "¡Nivel Final Completado!
 "
 align = 1
 clip_text = true
@@ -70,9 +70,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -500.0
-margin_top = -115.274
+margin_top = -161.89
 margin_right = 500.0
-margin_bottom = 106.726
+margin_bottom = 60.1096
 custom_fonts/font = SubResource( 2 )
 text = "Puntaje Conseguido:
 X
@@ -89,9 +89,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -172.5
-margin_top = -230.408
+margin_top = -200.743
 margin_right = 172.5
-margin_bottom = -82.4078
+margin_bottom = -52.7428
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )

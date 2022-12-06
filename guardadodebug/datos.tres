@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource( 1 )
-vidas = 5
-monedas = 0
+vidas = 4
+monedas = 19
 nivel_actual = "res://juego/Niveles/Nivel3.tscn"
 num_nivel_actual = 3
-nivel_siguiente = "res://juego/Niveles/NivelTesting.tscn"
+nivel_siguiente = "res://juego/Menus/MenuPrincipal.tscn"
+puntaje_total = 145

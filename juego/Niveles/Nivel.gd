@@ -6,12 +6,13 @@ extends Node
 export(String, FILE, "*.tscn") var siguiente_nivel = ""
 export var numero_nivel: int = 0
 
-onready var timer: Timer = $Timer
+onready var timer: Timer = $CosasExtra/Timer
 onready var advertencia: Label = $CosasExtra/AdvertenciaGuardado
 
 
 func _ready() -> void:
 	MusicaStellarRaiders.ejecutar_musica(MusicaStellarRaiders.get_mus_amb())
+	DataDelJugador.resetear_monedas_agarradas()
 	timer.start()
 	advertencia.visible = true
 

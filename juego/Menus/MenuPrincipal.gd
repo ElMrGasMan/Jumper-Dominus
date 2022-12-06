@@ -33,6 +33,7 @@ func _on_ButtonOpciones_pressed() -> void:
 
 func _on_ButtonNueva_pressed() -> void:
 	sfx_seleccion.play()
+	DataDelJugador.reseteo_completo()
 # warning-ignore:return_value_discarded
 	DataDelJugador.nivel_siguiente = nivel_inicial
 	get_tree().change_scene(pantalla_carga)

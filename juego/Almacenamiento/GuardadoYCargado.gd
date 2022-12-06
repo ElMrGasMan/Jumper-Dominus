@@ -37,6 +37,7 @@ func guardar_datos_partida() -> int:
 	datos_guardar.nivel_actual = DataDelJugador.nivel_actual
 	datos_guardar.num_nivel_actual = DataDelJugador.num_nivel_actual
 	datos_guardar.nivel_siguiente = DataDelJugador.nivel_siguiente
+	datos_guardar.puntaje_total = DataDelJugador.puntaje_total
 	
 	var resultado: int = ResourceSaver.save(ruta_guardado, datos_guardar)
 	
@@ -73,6 +74,7 @@ func cargar_datos_partida() -> void:
 	DataDelJugador.nivel_actual = datos_cargar.nivel_actual
 	DataDelJugador.num_nivel_actual = datos_cargar.num_nivel_actual
 	DataDelJugador.nivel_siguiente = datos_cargar.nivel_siguiente
+	DataDelJugador.puntaje_total = datos_cargar.puntaje_total
 
 
 func chequear_existencia_datos_guardados() -> bool:

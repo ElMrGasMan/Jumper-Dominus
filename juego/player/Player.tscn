@@ -1653,7 +1653,7 @@ nodes/MezclaJumpFall/position = Vector2( 533.333, 426.667 )
 nodes/TransicionSueloAire/node = SubResource( 22 )
 nodes/TransicionSueloAire/position = Vector2( 800, 213.333 )
 nodes/output/position = Vector2( 1493.33, 213.333 )
-node_connections = [ "output", 0, "MezclaDisparo", "CorrerVelocidad", 0, "Animation 2", "MezclaDisparo", 0, "TransicionSueloAire", "MezclaDisparo", 1, "Animation 5", "MezclaIdleRun", 0, "Animation", "MezclaIdleRun", 1, "CorrerVelocidad", "MezclaJumpFall", 0, "Animation 3", "MezclaJumpFall", 1, "Animation 4", "TransicionSueloAire", 0, "MezclaIdleRun", "TransicionSueloAire", 1, "MezclaJumpFall" ]
+node_connections = [ "output", 0, "MezclaDisparo", "MezclaIdleRun", 0, "Animation", "MezclaIdleRun", 1, "CorrerVelocidad", "CorrerVelocidad", 0, "Animation 2", "MezclaDisparo", 0, "TransicionSueloAire", "MezclaDisparo", 1, "Animation 5", "MezclaJumpFall", 0, "Animation 3", "MezclaJumpFall", 1, "Animation 4", "TransicionSueloAire", 0, "MezclaIdleRun", "TransicionSueloAire", 1, "MezclaJumpFall" ]
 
 [node name="MarkIV" type="KinematicBody"]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
