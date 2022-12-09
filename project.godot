@@ -138,7 +138,7 @@ config/name="Jumper Dominus"
 run/main_scene="res://juego/Menus/MenuPresentacionJuego.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="JumperDominus"
-config/icon="res://NewIcon.png"
+config/icon="res://icon_nuevo.png"
 
 [autoload]
 

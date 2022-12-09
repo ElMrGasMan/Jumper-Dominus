@@ -1,0 +1,16 @@
+#Godot-Specific Ignores
+.import/
+export.cfg
+export_presets.cfg
+
+#Imported Translations:
+*.translation
+
+
+#Mono-Specific Ignores: 
+.mono/
+data_*
+
+
+#Custom Folders:
+builds/
