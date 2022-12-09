@@ -134,7 +134,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Jumper Dominus"
+config/name="AgustínNicolásCalderónSchipani_JumperDominus"
 run/main_scene="res://juego/Menus/MenuPresentacionJuego.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="JumperDominus"
